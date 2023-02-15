@@ -1,9 +1,9 @@
-import express, { response } from 'express'
+import express, { Response } from 'express'
+import CreateCourseService from './CreateCourseService'
+import { createCourse } from './routes'
 
 const app = express()
 
-app.get("/",(req, res)=>{
-  return res.json({message: "Hello World"})
-})
+app.get("/", createCourse)
 
 app.listen(3333)
